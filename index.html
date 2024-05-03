@@ -1,0 +1,629 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>1admin App</title>
+	<meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
+	<!--- favicon-->
+	<link rel="shortcut icon" href="./favicon.ico" type="image/x-icon">
+
+	<!-- 
+		- custom css link
+	-->
+	<link rel="stylesheet" href="./assets/css/style.css">
+
+	<!-- 
+		- google font link
+	-->
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+	<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<script>
+	$(document).ready(function() {
+	$('#contactForm').submit(function(event) {
+	  event.preventDefault(); // Prevent the default form submission
+  
+	  // Get form data
+	  var formData = $(this).serialize();
+  
+	  // Send the form data to the server using AJAX
+	  $.ajax({
+		type: 'POST',
+		url: 'http://167.71.226.112/taskmanagement/contactusquery', // Replace with the actual URL where you want to submit the form
+		data: formData,
+		success: function(response) {
+		  console.log(response);  
+		  // Handle the success response
+		  console.log('Form submitted successfully');
+		  // You can display a success message or redirect to another page here
+		},
+		error: function(xhr, status, error) {
+		  // Handle the error response
+		  console.error('Form submission failed: ' + error);
+		  // You can display an error message here
+		}
+	  });
+	});
+  });  
+  </script>
+</head>
+
+<body id="top" bgcolor="white">
+
+	<!-- 
+		- #HEADER
+	-->
+
+	<header>
+
+		<div class="container">
+
+			<a href="#" class="logo">
+				<img src="./assets/images/logo.png" alt="Pod logo">
+			</a>
+
+			<nav class="navbar" data-navbar>
+
+				<button class="nav-close-btn" data-nav-close-btn>
+					<ion-icon name="close-outline"></ion-icon>
+				</button>
+
+				<ul class="navbar-list">
+
+					<li>
+						<a href="#home" class="navbar-link">Home</a>
+					</li>
+
+					<li>
+						<a href="#features" class="navbar-link">Features</a>
+					</li>
+
+					<li>
+						<a href="#overview" class="navbar-link">Overview</a>
+					</li>
+
+					<li>
+						<a href="privacy_policy.html" class="navbar-link">FAQ's</a>
+					</li>
+
+					<li>
+						<a href="https://play.google.com/store/apps/details?id=com.app.nextoneuser">
+
+						<button class="btn-primary">Download Now</button></a>
+					</li>
+
+				</ul>
+
+			</nav>
+
+			<button class="nav-open-btn" data-nav-open-btn>
+				<ion-icon name="menu"></ion-icon>
+			</button>
+
+		</div>
+	</header>
+
+	<main>
+
+		<article class="container">
+
+			<!-- 
+				- #HERO
+			-->
+
+			<section class="hero" id="home">
+
+				<div class="hero-content">
+					<h3 class="h3 hero-title">Introducing our Project and Attendance Management App, the ultimate solution to streamline project management and simplify attendance tracking for your organization.
+					</h3>
+
+					<a href="https://play.google.com/store/apps/details?id=com.app.nextoneuser">
+						<button class="btn-primary">Download now</button>
+					</a>
+				</div>
+
+				<figure class="hero-banner"></figure>
+
+			</section>
+
+
+
+			<section class="about" id="about">
+
+				<div class="overview-card">
+
+					<figure class="overview-banner">
+						<img src="./assets/images/overview-banner2.png" alt="overview banner">
+					</figure>
+
+					<div class="overview-content">
+
+						<h2 class="h3 overview-title">Our app is designed to enhance productivity, improve team collaboration, and ensure efficient time management.</h2>
+						<p class="overview-text">
+							Here's an overview of the key features and benefits:
+						</p>
+
+						<ul class="overview-list">
+							<li class="overview-item">
+								<ion-icon name="star"></ion-icon>
+								<span><strong>Project Management Made Easy </strong></span>
+							</li>
+
+							<li class="overview-item">
+								<ion-icon name="star"></ion-icon>
+								<span><strong>Collaboration and Communication</strong></span>
+							</li>
+							<li class="overview-item">
+								<ion-icon name="star"></ion-icon>
+								<span><strong>Time and Attendance Trackingy</strong></span>
+							</li>
+							<li class="overview-item">
+								<ion-icon name="star"></ion-icon>
+								<span><strong>Task Assignments and Reminders</strong></span>
+							</li>
+							<li class="overview-item">
+								<ion-icon name="star"></ion-icon>
+								<span><strong>Analytics and Reporting</strong></span>
+							</li>
+							<li class="overview-item">
+								<ion-icon name="star"></ion-icon>
+								<span><strong>Mobile Accessibilit</strong></span>
+							</li>
+
+						</ul>
+
+					</div>
+
+				</div>
+
+			</section>
+	<!-- 
+				- #DOWNLOAD
+			-->
+
+			<section class="download">
+				<ul class="download-list">
+					<li>
+						<a href="https://play.google.com/store/apps/details?id=com.app.nextoneuser" class="download-link">
+							<ion-icon name="logo-apple"></ion-icon>
+							<span>Free downoad for iPhone</span>
+						</a>
+					</li>
+
+					<li>
+						<img src="./assets/images/music.png" alt="divider image">
+					</li>
+
+					<li>
+						<a href="https://play.google.com/store/apps/details?id=com.app.nextoneuser" class="download-link">
+							<ion-icon name="logo-android"></ion-icon>
+							<span>Free downoad for Android</span>
+						</a>
+					</li>
+
+				</ul>
+
+			</section>
+
+			<section class="feature_" id="feature_">
+				<div class="overview-card">
+					<figure class="overview-banner">
+						<img src="./assets/images/backover.png" alt="overview banner">
+					</figure>
+					<div class="overview-content">
+						<h2 class="h2 overview-title">Project Management Made Easy</h2>
+						<p class="overview-text">
+							Our app provides a centralized platform for managing projects from start to finish. Create project plans, set milestones, assign tasks to team members, and track progress in real-time. With intuitive dashboards and Gantt charts, you'll have full visibility into project timelines, task dependencies, and resource allocation, empowering you to keep projects on track.
+						</p>
+					</div>
+				</div>
+
+				<div class="overview-card">
+					<div class="overview-content">
+						<h2 class="h2 overview-title">Collaboration and Communication</h2>
+						<p class="overview-text">
+							Foster seamless collaboration among team members with built-in communication tools. Share files, exchange messages, and collaborate on project-related discussions, all within the app. Say goodbye to scattered email threads and disjointed communication channels – our app keeps all project-related conversations organized and easily accessible.
+						</p>
+					</div>
+					<figure class="overview-banner">
+						<img src="./assets/images/backover.png" alt="overview banner">
+					</figure>
+					</div>
+
+				<div class="overview-card">
+					<figure class="overview-banner">
+							<img src="./assets/images/backover.png" alt="overview banner">
+					</figure>
+					<div class="overview-content">
+							<h2 class="h2 overview-title">
+								Time and Attendance Tracking
+							</h2>
+						<p class="overview-text">
+							Effortlessly track employee attendance and project hours with our intuitive time tracking features. Team members can clock in and out directly from the app, allowing you to accurately monitor attendance and work hours. You can generate comprehensive timesheets and reports, enabling easy payroll processing and project cost analysis.
+						</p>
+					</div>
+				</div>
+
+				<div class="overview-card">
+						<div class="overview-content">
+							<h2 class="h2 overview-title">
+								Task Assignments and Reminders</h2>
+								<p class="overview-text">Assign tasks to individual team members and set deadlines to ensure everyone stays on track. Our app sends automatic reminders and notifications, keeping team members informed about upcoming deadlines, task updates, and project milestones. This feature helps improve accountability, eliminate delays, and promote efficient task completion.
+							</p>
+						</div>
+						<figure class="overview-banner">
+							<img src="./assets/images/backover.png" alt="overview banner">
+						</figure>
+					</div>
+
+				<div class="overview-card">
+						<figure class="overview-banner">
+							<img src="./assets/images/backover.png" alt="overview banner">
+						</figure>
+						<div class="overview-content">
+							<h2 class="h2 overview-title">
+								Analytics and Reporting</h2>
+								<p class="overview-text">Gain valuable insights into project performance and team productivity through robust analytics and reporting capabilities. Our app generates comprehensive reports, showcasing key metrics such as project progress, task completion rates, resource utilization, and attendance patterns. Leverage these insights to make data-driven decisions and optimize your team's performance.
+							</p>
+						</div>
+				</div>
+
+				<div class="overview-card">
+					<div class="overview-content">
+						<h2 class="h2 overview-title">
+							Mobile Accessibility</h2>
+							<p class="overview-text">Stay connected and manage projects on the go with our mobile app. Access project details, track time, assign tasks, and communicate with team members – all from your mobile device. Whether you're in the office or on the move, our mobile app ensures you have full control over your projects and attendance management.
+						</p>
+					</div>
+					<figure class="overview-banner">
+						<img src="./assets/images/backover.png" alt="overview banner">
+					</figure>
+					</div>
+
+			</section>
+
+			<!-- 
+				- #FEATURES
+			-->
+
+			<section class="features" id="features">
+				<ul class="features-list">
+					<li class="features-item">
+						<h3 class="h3 features-item-title">Project Management Made Easy</h3>
+
+						<p class="features-item-text">
+							Our app provides a centralized platform for managing projects from start to finish.
+						</p>
+					</li>
+
+					
+					<li class="features-item">
+						<h3 class="h3 features-item-title">Collaboration and Communication</h3>
+						<p class="features-item-text">
+						 Foster seamless collaboration among team members with built-in communication tools.
+						</p>
+					</li>
+					<li class="features-item">
+						<h3 class="h3 features-item-title">Analytics and Reporting</h3>
+
+						<p class="features-item-text">
+							Gain valuable insights into project performance and team productivity through robust analytics and reporting capabilities.
+						</p>
+					</li>
+
+
+				</ul>
+
+				<figure class="feature-banner">
+					<img src="./assets/images/feature-banner-bg.png" alt="circle audio waveform" class="feature-banner-bg">
+
+					<img src="./assets/images/feature-banner.png" alt="pod app" class="banner-img">
+				</figure>
+
+				<ul class="features-list">
+					<li class="features-item">
+						<h3 class="h3 features-item-title">Time and Attendance Tracking</h3>
+						<p class="features-item-text">
+							Effortlessly track employee attendance and project hours with our intuitive time tracking features.
+						</p>
+					</li>
+					<li class="features-item">
+						<h3 class="h3 features-item-title">Task Assignments and Reminders</h3>
+						<p class="features-item-text">
+							Assign tasks to individual team members and set deadlines to ensure everyone stays on track.
+						</p>
+					</li>
+
+			
+					<li class="features-item">
+						<h3 class="h3 features-item-title">Mobile Accessibility</h3>
+
+					<p class="features-item-text">
+						Stay connected and manage projects on the go with our mobile app.
+					</p>
+					</li>
+
+
+				</ul>
+
+			</section>
+
+			<!-- 
+				- #OVERVIEW
+			-->
+
+			<section class="overview" id="overview">
+				<div class="overview-card">
+					<figure class="overview-banner">
+						<img src="./assets/images/backover3.png" alt="overview banner">
+					</figure>
+
+					<div class="overview-content">
+						<h2 class="h2 overview-title">Our Project and Attendance Management App is designed to</h2>
+						<ul class="overview-list">
+							<li class="overview-item">
+								<ion-icon name="checkmark-done-outline"></ion-icon>
+								<span>simplify complex project management processes and streamline attendance tracking,
+									 enabling your organization to maximize efficiency and productivity.</span>
+								</li>
+							<li class="overview-item">
+								<ion-icon name="checkmark-done-outline"></ion-icon>
+								<span>Say goodbye to <strong>Manual Spreadsheets </strong>,
+									<strong>Disjointed Communication,</strong>,
+									<strong>Cumbersome Attendance Tracking Methods</strong>.</span>
+							</li>
+							<li class="overview-item">
+								<ion-icon name="checkmark-done-outline"></ion-icon>
+								<span>Experience a seamless and integrated approach to project and attendance management with our app.</span>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</section>
+
+
+
+			
+
+			<!-- 
+				- #BLOG
+			-->
+			<section class="blog" id="contact_us"  style="text-align:center">
+
+				<h1 class="h1 blog-title">Contact Us</h1>
+				<p>Contact us today to schedule a demo and<br>learn how our app can transform the way you manage projects and track attendance in your organization.</p>
+					<div class="row" >
+					 
+						<form id="contactForm">
+							<div class="column">
+								<label for="name">Name</label>
+								<input type="text" id="name" name="name" placeholder="Your name..">
+		
+								<label for="email">Email </label>
+								<input type="email" id="email" name="email" placeholder="Your email..">
+						  </div>
+						  <div class="column">
+							<label for="subject">Message</label>
+							<textarea id="subject" name="subject" placeholder="Write something.." style="height:130px"></textarea>
+						  </div>
+						  <input class="btn-primary" type="submit" value="Submit">
+						</form>
+					</div>
+
+
+			</section>
+		
+
+
+			<!-- 
+				- #BLOG
+			-->
+<!-- 
+			<section class="blog" id="blog">
+
+				<h2 class="h2 blog-title">Latest Blog & Stories</h2>
+
+				<ul class="blog-list">
+
+					<li>
+						<a href="#" class="blog-post">
+
+							<figure class="blog-banner">
+								<img src="./assets/images/blog-1.jpg" alt="See How People Are Using Your Website With Hotjar">
+
+								<time datetime="2022-02-05">05 Fab, 2022</time>
+							</figure>
+
+							<div class="blog-content">
+								<h3 class="h3 blog-post-title">See How People Are Using Your Website With Hotjar</h3>
+
+								<p class="blog-post-text">
+									Each time a digital asset is purchased or sold, Sequoir donates a percentage
+								</p>
+							</div>
+
+						</a>
+					</li>
+
+					<li>
+						<a href="#" class="blog-post">
+
+							<figure class="blog-banner">
+								<img src="./assets/images/blog-2.jpg" alt="5 Tips to Write Your Own Website Copy">
+
+								<time datetime="2022-02-06">06 Fab, 2022</time>
+							</figure>
+
+							<div class="blog-content">
+								<h3 class="h3 blog-post-title">5 Tips to Write Your Own Website Copy</h3>
+
+								<p class="blog-post-text">
+									Each time a digital asset is purchased or sold, Sequoir donates a percentage
+								</p>
+							</div>
+
+						</a>
+					</li>
+
+					<li>
+						<a href="#" class="blog-post">
+
+							<figure class="blog-banner">
+								<img src="./assets/images/blog-3.jpg" alt="5 Brilliant Apps That Will Make Your Life Better">
+
+								<time datetime="2022-02-10">10 Fab, 2022</time>
+							</figure>
+
+							<div class="blog-content">
+								<h3 class="h3 blog-post-title">5 Brilliant Apps That Will Make Your Life Better</h3>
+
+								<p class="blog-post-text">
+									Each time a digital asset is purchased or sold, Sequoir donates a percentage
+								</p>
+							</div>
+
+						</a>
+					</li>
+
+				</ul>
+
+			</section>
+		-->
+		</article>
+
+	</main>
+
+	<!-- 
+		- #FOOTER
+	-->
+
+	<footer>
+
+		<div class="container">
+
+			<div class="footer-brand">
+
+				<a href="#" class="footer-logo">
+					<img src="./assets/images/logo.png" alt="pod logo">
+				</a>
+
+				<p>Crafted By <b>NEXTONE CODES PVT LTD</b></p>
+
+				<!--
+				<p>Follow us on</p>
+				<ul class="social-list">
+
+					<li>
+						<a href="https://twitter.com/codewithsadee" target="_blank" class="social-link">
+							<ion-icon name="logo-twitter"></ion-icon>
+						</a>
+					</li>
+
+					<li>
+						<a href="https://instagram.com/codewithsadee" target="_blank" class="social-link">
+							<ion-icon name="logo-instagram"></ion-icon>
+						</a>
+					</li>
+
+				</ul>
+
+			-->
+
+			</div>
+
+			<div class="footer-link-box">
+				<ul class="footer-list">
+					</ul>
+				<ul class="footer-list">
+
+					<li>
+						<h3 class="h5 footer-item-title">Company</h3>
+					</li>
+
+					<li>
+						<a href="https://www.nextonecodes.com/about-us" class="footer-link">About Us</a>
+					</li>
+
+					
+					<li>
+						<a href="#contact_us" class="footer-link">Contact us</a>
+					</li>
+					
+
+
+
+					<li>
+						<a href="#features" class="footer-link">Features</a>
+					</li>
+
+				</ul>
+				<!--
+					<ul class="footer-list">
+
+						<li>
+							<h3 class="h5 footer-item-title">Products</h3>
+						</li>
+
+						<li>
+							<a href="#" class="footer-link">Contact</a>
+						</li>
+
+					</ul>
+				-->
+				<ul class="footer-list">
+
+					<li>
+						<h3 class="h5 footer-item-title">Resources</h3>
+					</li>
+
+					<li>
+						<a href="privacy_policy.html" class="footer-link">FAQ'S</a>
+					</li>
+
+					<li>
+						<a href="delete_account.html" class="footer-link">Delete your account</a>
+					</li>
+
+					<li>
+						<a href="privacy_policy.html" class="footer-link">Terms & Conditions</a>
+					</li>
+
+				</ul>
+
+				<div class="footer-btn-group">
+					<a href="https://play.google.com/store/apps/details?id=com.app.nextoneuser">
+						<img src="./assets/images/footer-1.png" alt="apple store">
+					</a>
+
+					<a href="https://play.google.com/store/apps/details?id=com.app.nextoneuser">
+						<img src="./assets/images/footer-2.png" alt="google play store">
+					</a>
+				</div>
+
+			</div>
+
+		</div>
+
+		<p class="copyright">&copy; Copyrights 2022 @1admin App. All rights reserved.</p>
+
+	</footer>
+	<!-- 
+		- #GO TO TOP
+	-->
+	<a href="#top" class="go-top" data-go-top>
+		<ion-icon name="chevron-up"></ion-icon>
+	</a>
+	<!-- 
+		- custom js link
+	-->
+	<script src="./assets/js/script.js"></script>
+	<!-- 
+		- ionicon link
+	-->
+	<script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+	<script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
+</body>
+</html>
